@@ -1,4 +1,3 @@
-from msilib import type_binary
 from tkinter import *
 import backend
 import re
@@ -100,9 +99,9 @@ def update_command():
             errormessage("Year")
         elif len(re.findall("\d+", Price_text.get()))==0:
             errormessage("Price")
-        elif len(re.findall("^[a-zA-Z0-9 ]*$", author_text.get()))==0:
+        elif len(re.findall("^[a-zA-Z0-9 ]+$", author_text.get()))==0:
             errormessage("Author")
-        elif len(re.findall("^[a-zA-Z0-9 ]*$", title_text.get()))==0:
+        elif len(re.findall("^[a-zA-Z0-9 ]+$", title_text.get()))==0:
             errormessage("Title")
         else:
             backend.update(selected_tuple[0],title_text.get(),author_text.get(),year_text.get(),Price_text.get())
